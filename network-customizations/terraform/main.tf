@@ -45,7 +45,13 @@ module "route53_privatedns_primary" {
 
   user_defined_tags = var.user_defined_tags
 
+  # providers = {
+  #   aws = aws.local-us-east-1
+  # }
+  
   providers = {
-    aws = aws.local-us-east-1
+    #aws          = aws.local-us-west-2
+    aws.hub_main = aws.local-us-east-1
   }
+  
 }
