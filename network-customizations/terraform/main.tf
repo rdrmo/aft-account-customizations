@@ -5,7 +5,7 @@
 data "aws_availability_zones" "available" {}
 
 locals {
-  name   = "ex-${basename(path.cwd)}"
+  name   = "Shared"
   region = "us-east-1"
 
   vpc_cidr = "10.0.0.0/16"
@@ -23,7 +23,10 @@ locals {
 ################################################################################
 
 module "vpc" {
-  source = "../../"
+  #source = "../../"
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "5.7.1"
+}
 
   name = local.name
   cidr = local.vpc_cidr
