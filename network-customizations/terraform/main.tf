@@ -1,38 +1,34 @@
-# provider "aws" {
-#   region = local.region
-# }
+### Transit infrastructure
 
-data "aws_availability_zones" "available" {}
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+
+data "aws_organizations_organization" "org" {}
 
 locals {
-  name   = "Shared"
-  region = "us-east-1"
+  name   = "Hub"
+  region = var.region
+}
 
-  vpc_cidr = "10.0.0.0/16"
-  azs      = slice(data.aws_availability_zones.available.names, 0, 3)
+################################################################################
+# VPC section
+################################################################################
+
+#
+## Main VPC
+#
+resource "aws_vpc" "transit" {
+  cidr_block            = var.cidr_block
+  instance_tenancy      = "default"
+  
+  enable_dns_support    = true
+  enable_dns_hostnames  = true
 
   tags = {
-    Example    = local.name
-    GithubRepo = "terraform-aws-vpc"
-    GithubOrg  = "terraform-aws-modules"
+	#Name                = var.vpc_name
+	Name                = "TransitVPC"
+	Project             = "SharedNetwork"
+	CostCenter          = "Network"
   }
-}
-
-################################################################################
-# VPC Module
-################################################################################
-
-module "vpc" {
-  #source = "../../"
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "5.7.1"
-}
-
-  name = local.name
-  cidr = local.vpc_cidr
-
-  azs             = local.azs
-  private_subnets = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 4, k)]
-
-  #tags = local.tags
 }
