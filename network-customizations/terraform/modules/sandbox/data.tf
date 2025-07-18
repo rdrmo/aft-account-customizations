@@ -1,9 +1,8 @@
 #####################################################################
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. 
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 #
-# Version: 3.0.0
+# Version: 2.1.0
 ######################################################################
 
-variable "vpc_id" {}
-variable "region" {}
+data "aws_organizations_organization" "org" {}
