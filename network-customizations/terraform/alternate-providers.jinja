@@ -1,0 +1,424 @@
+## Auto generated providers.tf ##
+## Updated on: {{ timestamp }} ##
+
+provider "aws" {
+  alias = "local-us-east-1"
+  region = "us-east-1"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-us-east-2"
+  region = "us-east-2"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-us-west-2"
+  region = "us-west-2"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-ap-northeast-1"
+  region = "ap-northeast-1"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-ap-northeast-2"
+  region = "ap-northeast-2"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-ap-south-1"
+  region = "ap-south-1"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-ap-southeast-1"
+  region = "ap-southeast-1"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-ap-southeast-2"
+  region = "ap-southeast-2"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-ca-central-1"
+  region = "ca-central-1"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-eu-central-1"
+  region = "eu-central-1"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-eu-north-1"
+  region = "eu-north-1"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-eu-west-1"
+  region = "eu-west-1"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-eu-west-2"
+  region = "eu-west-2"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-eu-west-3"
+  region = "eu-west-3"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "local-sa-east-1"
+  region = "sa-east-1"
+  assume_role {
+    role_arn    = "{{ target_admin_role_arn }}"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+## Hub Account Providers ##
+
+provider "aws" {
+  alias = "hub-us-east-1"
+  region = "us-east-1"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-us-east-2"
+  region = "us-east-2"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-us-west-2"
+  region = "us-west-2"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-ap-northeast-1"
+  region = "ap-northeast-1"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-ap-northeast-2"
+  region = "ap-northeast-2"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-ap-south-1"
+  region = "ap-south-1"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-ap-southeast-1"
+  region = "ap-southeast-1"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-ap-southeast-2"
+  region = "ap-southeast-2"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-ca-central-1"
+  region = "ca-central-1"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-eu-central-1"
+  region = "eu-central-1"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-eu-north-1"
+  region = "eu-north-1"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-eu-west-1"
+  region = "eu-west-1"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-eu-west-2"
+  region = "eu-west-2"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-eu-west-3"
+  region = "eu-west-3"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}
+
+provider "aws" {
+  alias = "hub-sa-east-1"
+  region = "sa-east-1"
+  assume_role {
+    role_arn    = "arn:aws:iam::${data.aws_ssm_parameter.network_hub_acct_id.value}:role/AWSAFTExecution"
+  }
+  default_tags {
+    tags = {
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
+  }
+}

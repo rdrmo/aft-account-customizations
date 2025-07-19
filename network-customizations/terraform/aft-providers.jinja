@@ -8,7 +8,8 @@ provider "aws" {
   }
   default_tags {
     tags = {
-      managed_by                  = "AFT"
-    }
+      for key, value in { for k, v in var.user_defined_tags : k => v if k != "" && v != "" } :
+         key => value
+      }
   }
 }
