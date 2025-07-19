@@ -5,7 +5,36 @@
 # Version: 2.1.0
 ######################################################################
 
+module "ipam" {
+  source = "./modules/ipam"
 
+  # Define CIDR blocks to provision for each region and environment
+  ipam_configs = {
+    "region-1" = {
+      cidr_list = "10.0.0.0/14"
+      region    = "us-east-1"
+      env = {
+        "sdlc1"          = "10.0.0.0/18"
+        "sdlc2"          = "10.0.64.0/18"
+        "sdlc3"          = "10.0.128.0/18"
+        "sdlc4"          = "10.0.192.0/18"
+        "Infrastructure" = "10.1.0.0/18"
+        "Security"       = "10.1.64.0/18"
+      }
+    }
+    "region-2" = {
+      cidr_list = "10.4.0.0/14"
+      region    = "us-west-2"
+      env = {
+        "sdlc1"          = "10.4.0.0/18"
+        "sdlc2"          = "10.4.64.0/18"
+        "sdlc3"          = "10.4.128.0/18"
+        "sdlc4"          = "10.4.192.0/18"
+        "Infrastructure" = "10.5.0.0/18"
+        "Security"       = "10.5.64.0/18"
+      }
+    }
+  }
   # IPAM top level CIDR blocks
   main_pool_cidr_list = ["10.0.0.0/8"]
 
